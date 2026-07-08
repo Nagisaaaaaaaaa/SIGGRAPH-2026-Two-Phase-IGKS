@@ -1,0 +1,17 @@
+[tool.ruff]
+indent-width = 2
+line-length = 120
+
+[tool.ruff.format]
+docstring-code-format = true
+docstring-code-line-length = "dynamic"
+indent-style = "space"
+line-ending = "auto"
+quote-style = "double"
+skip-magic-trailing-comma = false
+
+[tool.ruff.lint]
+fixable = ["ALL"]
+ignore = ["F403", "F405"]
+select = ["E4", "E7", "E9", "F", "I"]
+unfixable = []
