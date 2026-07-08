@@ -1,0 +1,49 @@
+import numpy as np
+from pathlib import Path
+import re
+import sys
+import taichi as ti
+
+
+def find_igkstp() -> None:
+  global d, real
+
+  # Add IGKSTP binaries and sources to `sys.path`.
+  binary_dir = str(Path(r"@IGKSTP_BINARY_DIR@"))
+  source_dir = str(Path(r"@CMAKE_CURRENT_SOURCE_DIR@"))
+
+  for path in (binary_dir, source_dir):
+    if path not in sys.path:
+      sys.path.insert(0, path)
+
+  # Read the dimension `d` and the `Real` type from `Config.hpp`, then map `Real` to a Python type.
+  config_path = Path(source_dir) / "Misc" / "Config.hpp"
+  config_text = config_path.read_text(encoding="utf-8")
+
+  match = re.search(
+    r"^\s*__constant__\s+static\s+constexpr\s+usize\s+d\s*=\s*([0-9]+)\s*;",
+    config_text,
+    re.MULTILINE,
+  )
+  if match is None:
+    raise RuntimeError(f"Failed to find `__constant__ static constexpr usize d = ...;` in {config_path}")
+
+  d = int(match.group(1))
+
+  match = re.search(
+    r"^\s*using\s+Real\s*=\s*([A-Za-z_][A-Za-z0-9_:]*)\s*;",
+    config_text,
+    re.MULTILINE,
+  )
+  if match is None:
+    raise RuntimeError(f"Failed to find `using Real = ...;` in {config_path}")
+
+  real_cpp = match.group(1)
+  if real_cpp == "float":
+    real = np.float32
+    ti.real = ti.f32
+  elif real_cpp == "double":
+    real = np.float64
+    ti.real = ti.f64
+  else:
+    raise RuntimeError(f"Unsupported Real type: {real_cpp}")
