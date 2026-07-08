@@ -98,89 +98,89 @@ CONSTANT static constexpr C<static_cast<usize>(3)> i3{};
 //
 //
 //
-#define IGKSTP_M                                                                                                       \
+#define IGKS_TP_M                                                                                                      \
   C<static_cast<isize>(-2)> {}
-#define IGKSTP_N                                                                                                       \
+#define IGKS_TP_N                                                                                                      \
   C<static_cast<isize>(-1)> {}
-#define IGKSTP_O                                                                                                       \
+#define IGKS_TP_O                                                                                                      \
   C<static_cast<isize>(0)> {}
-#define IGKSTP_P                                                                                                       \
+#define IGKS_TP_P                                                                                                      \
   C<static_cast<isize>(1)> {}
-#define IGKSTP_Q                                                                                                       \
+#define IGKS_TP_Q                                                                                                      \
   C<static_cast<isize>(2)> {}
 
-CONSTANT static constexpr auto _n = Mat{IGKSTP_N};
-CONSTANT static constexpr auto _o = Mat{IGKSTP_O};
-CONSTANT static constexpr auto _p = Mat{IGKSTP_P};
+CONSTANT static constexpr auto _n = Mat{IGKS_TP_N};
+CONSTANT static constexpr auto _o = Mat{IGKS_TP_O};
+CONSTANT static constexpr auto _p = Mat{IGKS_TP_P};
 
-CONSTANT static constexpr auto _m = Mat{IGKSTP_M};
-CONSTANT static constexpr auto _q = Mat{IGKSTP_Q};
+CONSTANT static constexpr auto _m = Mat{IGKS_TP_M};
+CONSTANT static constexpr auto _q = Mat{IGKS_TP_Q};
 
-CONSTANT static constexpr auto _nn = Mat{IGKSTP_N, IGKSTP_N};
-CONSTANT static constexpr auto _on = Mat{IGKSTP_O, IGKSTP_N};
-CONSTANT static constexpr auto _pn = Mat{IGKSTP_P, IGKSTP_N};
+CONSTANT static constexpr auto _nn = Mat{IGKS_TP_N, IGKS_TP_N};
+CONSTANT static constexpr auto _on = Mat{IGKS_TP_O, IGKS_TP_N};
+CONSTANT static constexpr auto _pn = Mat{IGKS_TP_P, IGKS_TP_N};
 
-CONSTANT static constexpr auto _no = Mat{IGKSTP_N, IGKSTP_O};
-CONSTANT static constexpr auto _oo = Mat{IGKSTP_O, IGKSTP_O};
-CONSTANT static constexpr auto _po = Mat{IGKSTP_P, IGKSTP_O};
+CONSTANT static constexpr auto _no = Mat{IGKS_TP_N, IGKS_TP_O};
+CONSTANT static constexpr auto _oo = Mat{IGKS_TP_O, IGKS_TP_O};
+CONSTANT static constexpr auto _po = Mat{IGKS_TP_P, IGKS_TP_O};
 
-CONSTANT static constexpr auto _np = Mat{IGKSTP_N, IGKSTP_P};
-CONSTANT static constexpr auto _op = Mat{IGKSTP_O, IGKSTP_P};
-CONSTANT static constexpr auto _pp = Mat{IGKSTP_P, IGKSTP_P};
+CONSTANT static constexpr auto _np = Mat{IGKS_TP_N, IGKS_TP_P};
+CONSTANT static constexpr auto _op = Mat{IGKS_TP_O, IGKS_TP_P};
+CONSTANT static constexpr auto _pp = Mat{IGKS_TP_P, IGKS_TP_P};
 
-CONSTANT static constexpr auto _om = Mat{IGKSTP_O, IGKSTP_M};
-CONSTANT static constexpr auto _mo = Mat{IGKSTP_M, IGKSTP_O};
-CONSTANT static constexpr auto _qo = Mat{IGKSTP_Q, IGKSTP_O};
-CONSTANT static constexpr auto _oq = Mat{IGKSTP_O, IGKSTP_Q};
+CONSTANT static constexpr auto _om = Mat{IGKS_TP_O, IGKS_TP_M};
+CONSTANT static constexpr auto _mo = Mat{IGKS_TP_M, IGKS_TP_O};
+CONSTANT static constexpr auto _qo = Mat{IGKS_TP_Q, IGKS_TP_O};
+CONSTANT static constexpr auto _oq = Mat{IGKS_TP_O, IGKS_TP_Q};
 
-CONSTANT static constexpr auto _nnn = Mat{IGKSTP_N, IGKSTP_N, IGKSTP_N};
-CONSTANT static constexpr auto _onn = Mat{IGKSTP_O, IGKSTP_N, IGKSTP_N};
-CONSTANT static constexpr auto _pnn = Mat{IGKSTP_P, IGKSTP_N, IGKSTP_N};
+CONSTANT static constexpr auto _nnn = Mat{IGKS_TP_N, IGKS_TP_N, IGKS_TP_N};
+CONSTANT static constexpr auto _onn = Mat{IGKS_TP_O, IGKS_TP_N, IGKS_TP_N};
+CONSTANT static constexpr auto _pnn = Mat{IGKS_TP_P, IGKS_TP_N, IGKS_TP_N};
 
-CONSTANT static constexpr auto _non = Mat{IGKSTP_N, IGKSTP_O, IGKSTP_N};
-CONSTANT static constexpr auto _oon = Mat{IGKSTP_O, IGKSTP_O, IGKSTP_N};
-CONSTANT static constexpr auto _pon = Mat{IGKSTP_P, IGKSTP_O, IGKSTP_N};
+CONSTANT static constexpr auto _non = Mat{IGKS_TP_N, IGKS_TP_O, IGKS_TP_N};
+CONSTANT static constexpr auto _oon = Mat{IGKS_TP_O, IGKS_TP_O, IGKS_TP_N};
+CONSTANT static constexpr auto _pon = Mat{IGKS_TP_P, IGKS_TP_O, IGKS_TP_N};
 
-CONSTANT static constexpr auto _npn = Mat{IGKSTP_N, IGKSTP_P, IGKSTP_N};
-CONSTANT static constexpr auto _opn = Mat{IGKSTP_O, IGKSTP_P, IGKSTP_N};
-CONSTANT static constexpr auto _ppn = Mat{IGKSTP_P, IGKSTP_P, IGKSTP_N};
+CONSTANT static constexpr auto _npn = Mat{IGKS_TP_N, IGKS_TP_P, IGKS_TP_N};
+CONSTANT static constexpr auto _opn = Mat{IGKS_TP_O, IGKS_TP_P, IGKS_TP_N};
+CONSTANT static constexpr auto _ppn = Mat{IGKS_TP_P, IGKS_TP_P, IGKS_TP_N};
 
-CONSTANT static constexpr auto _nno = Mat{IGKSTP_N, IGKSTP_N, IGKSTP_O};
-CONSTANT static constexpr auto _ono = Mat{IGKSTP_O, IGKSTP_N, IGKSTP_O};
-CONSTANT static constexpr auto _pno = Mat{IGKSTP_P, IGKSTP_N, IGKSTP_O};
+CONSTANT static constexpr auto _nno = Mat{IGKS_TP_N, IGKS_TP_N, IGKS_TP_O};
+CONSTANT static constexpr auto _ono = Mat{IGKS_TP_O, IGKS_TP_N, IGKS_TP_O};
+CONSTANT static constexpr auto _pno = Mat{IGKS_TP_P, IGKS_TP_N, IGKS_TP_O};
 
-CONSTANT static constexpr auto _noo = Mat{IGKSTP_N, IGKSTP_O, IGKSTP_O};
-CONSTANT static constexpr auto _ooo = Mat{IGKSTP_O, IGKSTP_O, IGKSTP_O};
-CONSTANT static constexpr auto _poo = Mat{IGKSTP_P, IGKSTP_O, IGKSTP_O};
+CONSTANT static constexpr auto _noo = Mat{IGKS_TP_N, IGKS_TP_O, IGKS_TP_O};
+CONSTANT static constexpr auto _ooo = Mat{IGKS_TP_O, IGKS_TP_O, IGKS_TP_O};
+CONSTANT static constexpr auto _poo = Mat{IGKS_TP_P, IGKS_TP_O, IGKS_TP_O};
 
-CONSTANT static constexpr auto _npo = Mat{IGKSTP_N, IGKSTP_P, IGKSTP_O};
-CONSTANT static constexpr auto _opo = Mat{IGKSTP_O, IGKSTP_P, IGKSTP_O};
-CONSTANT static constexpr auto _ppo = Mat{IGKSTP_P, IGKSTP_P, IGKSTP_O};
+CONSTANT static constexpr auto _npo = Mat{IGKS_TP_N, IGKS_TP_P, IGKS_TP_O};
+CONSTANT static constexpr auto _opo = Mat{IGKS_TP_O, IGKS_TP_P, IGKS_TP_O};
+CONSTANT static constexpr auto _ppo = Mat{IGKS_TP_P, IGKS_TP_P, IGKS_TP_O};
 
-CONSTANT static constexpr auto _nnp = Mat{IGKSTP_N, IGKSTP_N, IGKSTP_P};
-CONSTANT static constexpr auto _onp = Mat{IGKSTP_O, IGKSTP_N, IGKSTP_P};
-CONSTANT static constexpr auto _pnp = Mat{IGKSTP_P, IGKSTP_N, IGKSTP_P};
+CONSTANT static constexpr auto _nnp = Mat{IGKS_TP_N, IGKS_TP_N, IGKS_TP_P};
+CONSTANT static constexpr auto _onp = Mat{IGKS_TP_O, IGKS_TP_N, IGKS_TP_P};
+CONSTANT static constexpr auto _pnp = Mat{IGKS_TP_P, IGKS_TP_N, IGKS_TP_P};
 
-CONSTANT static constexpr auto _nop = Mat{IGKSTP_N, IGKSTP_O, IGKSTP_P};
-CONSTANT static constexpr auto _oop = Mat{IGKSTP_O, IGKSTP_O, IGKSTP_P};
-CONSTANT static constexpr auto _pop = Mat{IGKSTP_P, IGKSTP_O, IGKSTP_P};
+CONSTANT static constexpr auto _nop = Mat{IGKS_TP_N, IGKS_TP_O, IGKS_TP_P};
+CONSTANT static constexpr auto _oop = Mat{IGKS_TP_O, IGKS_TP_O, IGKS_TP_P};
+CONSTANT static constexpr auto _pop = Mat{IGKS_TP_P, IGKS_TP_O, IGKS_TP_P};
 
-CONSTANT static constexpr auto _npp = Mat{IGKSTP_N, IGKSTP_P, IGKSTP_P};
-CONSTANT static constexpr auto _opp = Mat{IGKSTP_O, IGKSTP_P, IGKSTP_P};
-CONSTANT static constexpr auto _ppp = Mat{IGKSTP_P, IGKSTP_P, IGKSTP_P};
+CONSTANT static constexpr auto _npp = Mat{IGKS_TP_N, IGKS_TP_P, IGKS_TP_P};
+CONSTANT static constexpr auto _opp = Mat{IGKS_TP_O, IGKS_TP_P, IGKS_TP_P};
+CONSTANT static constexpr auto _ppp = Mat{IGKS_TP_P, IGKS_TP_P, IGKS_TP_P};
 
-CONSTANT static constexpr auto _oom = Mat{IGKSTP_O, IGKSTP_O, IGKSTP_M};
-CONSTANT static constexpr auto _omo = Mat{IGKSTP_O, IGKSTP_M, IGKSTP_O};
-CONSTANT static constexpr auto _moo = Mat{IGKSTP_M, IGKSTP_O, IGKSTP_O};
-CONSTANT static constexpr auto _qoo = Mat{IGKSTP_Q, IGKSTP_O, IGKSTP_O};
-CONSTANT static constexpr auto _oqo = Mat{IGKSTP_O, IGKSTP_Q, IGKSTP_O};
-CONSTANT static constexpr auto _ooq = Mat{IGKSTP_O, IGKSTP_O, IGKSTP_Q};
+CONSTANT static constexpr auto _oom = Mat{IGKS_TP_O, IGKS_TP_O, IGKS_TP_M};
+CONSTANT static constexpr auto _omo = Mat{IGKS_TP_O, IGKS_TP_M, IGKS_TP_O};
+CONSTANT static constexpr auto _moo = Mat{IGKS_TP_M, IGKS_TP_O, IGKS_TP_O};
+CONSTANT static constexpr auto _qoo = Mat{IGKS_TP_Q, IGKS_TP_O, IGKS_TP_O};
+CONSTANT static constexpr auto _oqo = Mat{IGKS_TP_O, IGKS_TP_Q, IGKS_TP_O};
+CONSTANT static constexpr auto _ooq = Mat{IGKS_TP_O, IGKS_TP_O, IGKS_TP_Q};
 
-#undef IGKSTP_M
-#undef IGKSTP_N
-#undef IGKSTP_O
-#undef IGKSTP_P
-#undef IGKSTP_Q
+#undef IGKS_TP_M
+#undef IGKS_TP_N
+#undef IGKS_TP_O
+#undef IGKS_TP_P
+#undef IGKS_TP_Q
 
 using N = std::decay_t<decltype(_n)>;
 using O = std::decay_t<decltype(_o)>;
@@ -252,61 +252,61 @@ using OOQ = std::decay_t<decltype(_ooq)>;
 //
 //
 //
-#define IGKSTP_0                                                                                                       \
+#define IGKS_TP_0                                                                                                      \
   C<static_cast<usize>(0)> {}
-#define IGKSTP_1                                                                                                       \
+#define IGKS_TP_1                                                                                                      \
   C<static_cast<usize>(1)> {}
-#define IGKSTP_2                                                                                                       \
+#define IGKS_TP_2                                                                                                      \
   C<static_cast<usize>(2)> {}
-#define IGKSTP_3                                                                                                       \
+#define IGKS_TP_3                                                                                                      \
   C<static_cast<usize>(3)> {}
 
-CONSTANT static constexpr auto _0 = Mat{IGKSTP_0};
-CONSTANT static constexpr auto _1 = Mat{IGKSTP_1};
-CONSTANT static constexpr auto _2 = Mat{IGKSTP_2};
-CONSTANT static constexpr auto _3 = Mat{IGKSTP_3};
+CONSTANT static constexpr auto _0 = Mat{IGKS_TP_0};
+CONSTANT static constexpr auto _1 = Mat{IGKS_TP_1};
+CONSTANT static constexpr auto _2 = Mat{IGKS_TP_2};
+CONSTANT static constexpr auto _3 = Mat{IGKS_TP_3};
 
-CONSTANT static constexpr auto _00 = Mat{IGKSTP_0, IGKSTP_0};
+CONSTANT static constexpr auto _00 = Mat{IGKS_TP_0, IGKS_TP_0};
 
-CONSTANT static constexpr auto _10 = Mat{IGKSTP_1, IGKSTP_0};
-CONSTANT static constexpr auto _01 = Mat{IGKSTP_0, IGKSTP_1};
+CONSTANT static constexpr auto _10 = Mat{IGKS_TP_1, IGKS_TP_0};
+CONSTANT static constexpr auto _01 = Mat{IGKS_TP_0, IGKS_TP_1};
 
-CONSTANT static constexpr auto _20 = Mat{IGKSTP_2, IGKSTP_0};
-CONSTANT static constexpr auto _11 = Mat{IGKSTP_1, IGKSTP_1};
-CONSTANT static constexpr auto _02 = Mat{IGKSTP_0, IGKSTP_2};
+CONSTANT static constexpr auto _20 = Mat{IGKS_TP_2, IGKS_TP_0};
+CONSTANT static constexpr auto _11 = Mat{IGKS_TP_1, IGKS_TP_1};
+CONSTANT static constexpr auto _02 = Mat{IGKS_TP_0, IGKS_TP_2};
 
-CONSTANT static constexpr auto _30 = Mat{IGKSTP_3, IGKSTP_0};
-CONSTANT static constexpr auto _21 = Mat{IGKSTP_2, IGKSTP_1};
-CONSTANT static constexpr auto _12 = Mat{IGKSTP_1, IGKSTP_2};
-CONSTANT static constexpr auto _03 = Mat{IGKSTP_0, IGKSTP_3};
+CONSTANT static constexpr auto _30 = Mat{IGKS_TP_3, IGKS_TP_0};
+CONSTANT static constexpr auto _21 = Mat{IGKS_TP_2, IGKS_TP_1};
+CONSTANT static constexpr auto _12 = Mat{IGKS_TP_1, IGKS_TP_2};
+CONSTANT static constexpr auto _03 = Mat{IGKS_TP_0, IGKS_TP_3};
 
-CONSTANT static constexpr auto _000 = Mat{IGKSTP_0, IGKSTP_0, IGKSTP_0};
+CONSTANT static constexpr auto _000 = Mat{IGKS_TP_0, IGKS_TP_0, IGKS_TP_0};
 
-CONSTANT static constexpr auto _100 = Mat{IGKSTP_1, IGKSTP_0, IGKSTP_0};
-CONSTANT static constexpr auto _010 = Mat{IGKSTP_0, IGKSTP_1, IGKSTP_0};
-CONSTANT static constexpr auto _001 = Mat{IGKSTP_0, IGKSTP_0, IGKSTP_1};
+CONSTANT static constexpr auto _100 = Mat{IGKS_TP_1, IGKS_TP_0, IGKS_TP_0};
+CONSTANT static constexpr auto _010 = Mat{IGKS_TP_0, IGKS_TP_1, IGKS_TP_0};
+CONSTANT static constexpr auto _001 = Mat{IGKS_TP_0, IGKS_TP_0, IGKS_TP_1};
 
-CONSTANT static constexpr auto _200 = Mat{IGKSTP_2, IGKSTP_0, IGKSTP_0};
-CONSTANT static constexpr auto _110 = Mat{IGKSTP_1, IGKSTP_1, IGKSTP_0};
-CONSTANT static constexpr auto _020 = Mat{IGKSTP_0, IGKSTP_2, IGKSTP_0};
-CONSTANT static constexpr auto _101 = Mat{IGKSTP_1, IGKSTP_0, IGKSTP_1};
-CONSTANT static constexpr auto _011 = Mat{IGKSTP_0, IGKSTP_1, IGKSTP_1};
-CONSTANT static constexpr auto _002 = Mat{IGKSTP_0, IGKSTP_0, IGKSTP_2};
+CONSTANT static constexpr auto _200 = Mat{IGKS_TP_2, IGKS_TP_0, IGKS_TP_0};
+CONSTANT static constexpr auto _110 = Mat{IGKS_TP_1, IGKS_TP_1, IGKS_TP_0};
+CONSTANT static constexpr auto _020 = Mat{IGKS_TP_0, IGKS_TP_2, IGKS_TP_0};
+CONSTANT static constexpr auto _101 = Mat{IGKS_TP_1, IGKS_TP_0, IGKS_TP_1};
+CONSTANT static constexpr auto _011 = Mat{IGKS_TP_0, IGKS_TP_1, IGKS_TP_1};
+CONSTANT static constexpr auto _002 = Mat{IGKS_TP_0, IGKS_TP_0, IGKS_TP_2};
 
-CONSTANT static constexpr auto _300 = Mat{IGKSTP_3, IGKSTP_0, IGKSTP_0};
-CONSTANT static constexpr auto _210 = Mat{IGKSTP_2, IGKSTP_1, IGKSTP_0};
-CONSTANT static constexpr auto _120 = Mat{IGKSTP_1, IGKSTP_2, IGKSTP_0};
-CONSTANT static constexpr auto _030 = Mat{IGKSTP_0, IGKSTP_3, IGKSTP_0};
-CONSTANT static constexpr auto _201 = Mat{IGKSTP_2, IGKSTP_0, IGKSTP_1};
-CONSTANT static constexpr auto _111 = Mat{IGKSTP_1, IGKSTP_1, IGKSTP_1};
-CONSTANT static constexpr auto _021 = Mat{IGKSTP_0, IGKSTP_2, IGKSTP_1};
-CONSTANT static constexpr auto _102 = Mat{IGKSTP_1, IGKSTP_0, IGKSTP_2};
-CONSTANT static constexpr auto _012 = Mat{IGKSTP_0, IGKSTP_1, IGKSTP_2};
-CONSTANT static constexpr auto _003 = Mat{IGKSTP_0, IGKSTP_0, IGKSTP_3};
+CONSTANT static constexpr auto _300 = Mat{IGKS_TP_3, IGKS_TP_0, IGKS_TP_0};
+CONSTANT static constexpr auto _210 = Mat{IGKS_TP_2, IGKS_TP_1, IGKS_TP_0};
+CONSTANT static constexpr auto _120 = Mat{IGKS_TP_1, IGKS_TP_2, IGKS_TP_0};
+CONSTANT static constexpr auto _030 = Mat{IGKS_TP_0, IGKS_TP_3, IGKS_TP_0};
+CONSTANT static constexpr auto _201 = Mat{IGKS_TP_2, IGKS_TP_0, IGKS_TP_1};
+CONSTANT static constexpr auto _111 = Mat{IGKS_TP_1, IGKS_TP_1, IGKS_TP_1};
+CONSTANT static constexpr auto _021 = Mat{IGKS_TP_0, IGKS_TP_2, IGKS_TP_1};
+CONSTANT static constexpr auto _102 = Mat{IGKS_TP_1, IGKS_TP_0, IGKS_TP_2};
+CONSTANT static constexpr auto _012 = Mat{IGKS_TP_0, IGKS_TP_1, IGKS_TP_2};
+CONSTANT static constexpr auto _003 = Mat{IGKS_TP_0, IGKS_TP_0, IGKS_TP_3};
 
-#undef IGKSTP_0
-#undef IGKSTP_1
-#undef IGKSTP_2
-#undef IGKSTP_3
+#undef IGKS_TP_0
+#undef IGKS_TP_1
+#undef IGKS_TP_2
+#undef IGKS_TP_3
 
 } // namespace igks::tp

@@ -33,7 +33,7 @@ public:
 
   template <typename tag = void>
   [[nodiscard]] HOST_DEVICE constexpr auto data() const & {
-    return ::MDView{layout(), view_.data()};
+    return igks::tp::MDView{layout(), view_.data()};
   }
 
   template <typename tag = void>
@@ -41,7 +41,7 @@ public:
 
   template <typename tag = void>
   [[nodiscard]] HOST_DEVICE constexpr auto data() & {
-    return ::MDView{layout(), view_.data()};
+    return igks::tp::MDView{layout(), view_.data()};
   }
 
   template <typename tag = void>

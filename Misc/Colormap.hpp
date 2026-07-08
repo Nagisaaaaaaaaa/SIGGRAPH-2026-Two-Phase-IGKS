@@ -88,7 +88,7 @@ struct Turbo {
     u32 j = i + 1;
     T t = value256 - i;
 
-    auto const &colors = ::detail::colormap::colorsTurbo;
+    auto const &colors = detail::colormap::colorsTurbo;
     return Lerp(
         Mat{static_cast<T>(colors[i][0]), static_cast<T>(colors[i][1]), static_cast<T>(colors[i][2])},
         Mat{static_cast<T>(colors[j][0]), static_cast<T>(colors[j][1]), static_cast<T>(colors[j][2])}, t

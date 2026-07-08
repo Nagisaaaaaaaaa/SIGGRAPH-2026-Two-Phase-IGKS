@@ -1,7 +1,7 @@
-project(IGKSTP-Misc LANGUAGES CXX CUDA)
+project(IGKS-TP-Misc LANGUAGES CXX CUDA)
 
 add_library(${PROJECT_NAME} INTERFACE)
-add_library(IGKSTP::Misc ALIAS ${PROJECT_NAME})
+add_library(IGKS::TP::Misc ALIAS ${PROJECT_NAME})
 
 target_include_directories(${PROJECT_NAME} INTERFACE
   ${CMAKE_CURRENT_SOURCE_DIR}/..
