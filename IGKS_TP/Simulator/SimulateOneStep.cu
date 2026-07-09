@@ -15,14 +15,22 @@ void Simulator::SimulateOneStep() {
   auto last = first + storage().uDevice[0].size();
   auto uNormMax = thrust::transform_reduce(first, last, [g = accessor()] DEVICE(usize i) -> Real {
     auto norm = [](auto const &v) { return std::sqrt(v.Dot(v)); };
+  #if 0 // TODO: Bypass GCC bugs.
     return norm(g.u(g.layout()(static_cast<isize>(i))));
+  #else
+    return norm(g.u(value_type::Cast<isize>(g.layout()(i))));
+  #endif
   }, 0_R, cuda::maximum<Real>());
   descriptor().dt() = cfl() / (cs + uNormMax);
 #elif 0
   auto first = thrust::make_counting_iterator<usize>(0);
   auto last = first + storage().uDevice[0].size();
   auto spectralRadiusSumMax = thrust::transform_reduce(first, last, [g = accessor()] DEVICE(usize i) -> Real {
+  #if 0 // TODO: Bypass GCC bugs.
     auto u = g.u(g.layout()(static_cast<isize>(i)));
+  #else
+    auto u = g.u(value_type::Cast<isize>(g.layout()(i)));
+  #endif
     auto sum = static_cast<Real>(d) * cs;
     ForEach<d>([&](auto id) { sum += std::abs(u(id)); });
     return sum;

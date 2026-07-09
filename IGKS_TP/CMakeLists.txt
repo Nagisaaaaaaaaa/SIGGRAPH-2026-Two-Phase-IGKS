@@ -8,6 +8,10 @@ file(GLOB_RECURSE SRC_FILES
 add_library(${PROJECT_NAME} STATIC ${SRC_FILES})
 add_library(IGKS::TP ALIAS ${PROJECT_NAME})
 
+set_target_properties(${PROJECT_NAME} PROPERTIES
+  POSITION_INDEPENDENT_CODE ON
+)
+
 target_include_directories(${PROJECT_NAME} PUBLIC
   ${Python_INCLUDE_DIRS}
   ${NB_DIR}/include
