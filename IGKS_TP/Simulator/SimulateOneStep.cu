@@ -293,7 +293,7 @@ void Simulator::SimulateOneStep() {
     swap(storage().pDevice, storage().pTempDevice);
   }
 
-// Apply pressure normalization.
+  // Apply pressure normalization.
 #if 1
   auto pSum = thrust::reduce(storage().pDevice.begin(), storage().pDevice.end(), 0_R);
   auto pAvg = pSum / static_cast<Real>(storage().pDevice.size());
@@ -302,7 +302,7 @@ void Simulator::SimulateOneStep() {
   }).Launch();
 #endif
 
-// Apply pressure filter.
+  // Apply pressure filter.
 #if 1
   Launcher(accessor().layout(), [g = accessor()] DEVICE(Crd const &crd) mutable {
     auto ps = [&](auto s) { return g.p(crd + s); };
