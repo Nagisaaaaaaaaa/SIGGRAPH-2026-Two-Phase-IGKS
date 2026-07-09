@@ -150,6 +150,8 @@ public:
   }
 
 public:
+#if 1
+  // Rayleigh-Taylor instability.
   [[nodiscard]] HOST_DEVICE auto bc(Crd const &crd) const {
     bool isOutOfDomainAtAxis1 = crd(1) < 0 || crd(1) >= resolution()(1);
     bool isOutOfDomainExceptAxis1 = false;
@@ -233,6 +235,10 @@ public:
 
     return p_[layout()(crdMapped)];
   }
+#elif 0
+  // Dam break.
+  // TODO: Your code here.
+#endif
 
   HOST_DEVICE void phi(Crd const &crd, Real v) { phi_[layout()(crd)] = v; }
 

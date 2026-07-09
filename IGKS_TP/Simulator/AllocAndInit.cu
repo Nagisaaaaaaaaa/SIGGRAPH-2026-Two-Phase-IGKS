@@ -14,6 +14,7 @@ void Simulator::AllocAndInit() {
     auto pos = value_type::Cast<Real>(crd) + VecDr<>::Constant<0.5_R>();
     auto res = value_type::Cast<Real>(g.resolution());
 
+#if 1
     // Rayleigh-Taylor instability.
     {
       pos(1) -= g.resolution()(1) / 2_R;
@@ -29,6 +30,10 @@ void Simulator::AllocAndInit() {
               (g.phi()(1) - g.phi()(0)) / 2_R * std::tanh(2_R * (pos(1) - y0) / g.interfaceWidth());
       }
     }
+#elif 0
+    // Dam break.
+    { phi = (pos(0) < res(0) / 4_R && pos(1) < res(1) * (2_R / 3_R)) ? g.phi()(1) : g.phi()(0); }
+#endif
 
     g.phi(crd, phi);
     g.phiTemp(crd, phi);

@@ -35,31 +35,56 @@ ti.init(
 def main() -> None:
   config = igks_tp.SimulatorConfig()
 
-  # Rayleigh-Taylor instability.
-  L = 200
-  rho_ratio = 3  # 1000
-  At = (1 - 1 / rho_ratio) / (1 + 1 / rho_ratio)
-  Re = 3000
-  mu_ratio = 1  # 100
-  g = 5e-7
-  Pe = 1000  # 200
-  # Ca = 0.26  # 0.44
-  # We = 50000
+  if 1:
+    # Rayleigh-Taylor instability.
+    L = 200
+    rho_ratio = 3  # 1000
+    At = (1 - 1 / rho_ratio) / (1 + 1 / rho_ratio)
+    Re = 3000
+    mu_ratio = 1  # 100
+    g = 5e-7
+    Pe = 1000  # 200
+    # Ca = 0.26  # 0.44
+    # We = 50000
 
-  u_ref = math.sqrt(g * L)
-  t_ref = math.sqrt(L / (g * At))
-  nu1 = u_ref * L / Re
-  nu0 = rho_ratio * nu1 / mu_ratio
+    u_ref = math.sqrt(g * L)
+    t_ref = math.sqrt(L / (g * At))
+    nu1 = u_ref * L / Re
+    nu0 = rho_ratio * nu1 / mu_ratio
 
-  config.resolution = [L, 4 * L] if d == 2 else [L, 4 * L, L]
-  config.rho = [1 / rho_ratio, 1]
-  config.nu = [nu0, nu1]
-  config.gravity = [0, -g] if d == 2 else [0, -g, 0]
-  config.interfaceWidth = 5
-  config.mobility = u_ref * L / Pe
-  config.sigma = 0
-  # config.sigma = 1 * nu1 * u_ref / Ca
-  # config.sigma = 1 * L * math.sqrt(g * L) / We
+    config.resolution = [L, 4 * L] if d == 2 else [L, 4 * L, L]
+    config.rho = [1 / rho_ratio, 1]
+    config.nu = [nu0, nu1]
+    config.gravity = [0, -g] if d == 2 else [0, -g, 0]
+    config.interfaceWidth = 5
+    config.mobility = u_ref * L / Pe
+    config.sigma = 0
+    # config.sigma = 1 * nu1 * u_ref / Ca
+    # config.sigma = 1 * L * math.sqrt(g * L) / We
+  elif 0:
+    # Dam break.
+    a = 0.2
+    L = 100
+    scale = [4, 3] if d == 2 else [4, 3, 1]
+    n2 = 2
+    rho_ratio = 1000
+    u02 = 9.8 * n2 * a
+    Re1 = rho_ratio * math.sqrt(u02) * n2 * a / 1e-3
+    Re0 = 1 * math.sqrt(u02) * n2 * a / 1e-5
+    u_ref = math.sqrt(2.5e-6 / 9.8 * (L * u02) / a)
+
+    g = 9.8 * ((a * u_ref**2) / (L * u02))
+    t_ref = 1 * ((L * math.sqrt(u02)) / (a * u_ref))
+    nu1 = u_ref * n2 * L / Re1
+    nu0 = u_ref * n2 * L / Re0
+
+    config.resolution = [s * L for s in scale]
+    config.rho = [1 / rho_ratio, 1]
+    config.nu = [nu0, nu1]
+    config.gravity = [0, -g] if d == 2 else [0, -g, 0]
+    config.interfaceWidth = 5  # 3
+    config.mobility = 0.1  # 1 / 12
+    config.sigma = 0.072 * ((1 * L * u_ref**2) / (rho_ratio * a * u02))
 
   config.cfl = 0.6
 
