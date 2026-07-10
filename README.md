@@ -8,7 +8,7 @@ Unfortunately, we ultimately had to settle for a C++ & CUDA reference implementa
 
 To prioritize readability, we stripped out all performance optimizations. However, making it run faster is quite straightforward: simply move the boundary condition handling into a separate kernel and eliminate as many redundant floating-point operations as possible. Doing just this is enough to hit the performance benchmarks reported in our paper. Naturally, there's plenty of room for further optimization, which we encourage you to explore on your own.
 
-You can find the core kernel for the two-phase IGKS in `SimulateOneStep.cu`. It maps exactly to Appendix A in the paper and is remarkably concise—just over 300 lines long. While we only provide a 2D implementation here, extending it to 3D is a breeze. Just do a global search for `Your code here` and fill in the blanks; you'll only need to write about 150 lines of code in total. Finally, we leave you with a "final quiz": in high-density scenarios, boundary handling must be implemented with extreme care. Try to figure out what might trigger instability.
+You can find the core kernel for the two-phase IGKS in `SimulateOneStep.cu`. It maps exactly to Appendix A in the paper and is remarkably concise—just over 300 lines long. While we only provide a 2D implementation here, extending it to 3D is a breeze. Just do a global search for `Your code here` and fill in the blanks; you'll only need to write about 150 lines of code in total. Finally, we leave you with a "final puzzle": in high-density scenarios, boundary handling must be implemented with extreme care. Try to figure out what might trigger instability.
 
 ## Getting Started
 
